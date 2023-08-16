@@ -21,6 +21,9 @@ int main(void) {
                 print_solutions(calculate_solutions(a, b, c));
                 printf("Press esc to stop or any button to continue\n");
                 ch = _getch();
+                solutions[0] = 0;
+                solutions[1] = 0;
+                solutions[2] = 0;
          }
         else return 0;
     }while (ch!= 27);
