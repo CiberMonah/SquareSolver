@@ -26,7 +26,7 @@ void SquareSol(float a, float b, float c) {
     else {
         if (fabs(D - 0) < eps)
             printf("Sol1 = %.5f\n", -b / (2 * a));
-        else if (fabs(D - 0) < eps) {
+        else if (fabs(D - eps) > 0) {
             printf("Sol1 = %.5f\n", ((-b  + sqrt(D)) / (2 * a)));
             printf("Sol2 = %.5f\n", ((-b  - sqrt(D)) / (2 * a)));
         }
