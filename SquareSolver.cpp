@@ -3,7 +3,7 @@
 #include <TXLib.h>
 #define eps 0.00001
 
-void Square_solution(float a, float b, float c);
+void Print_solutions(float a, float b, float c);
 void greeting(void);
 bool check(void);
 void input(float *a, float *b, float *c);
@@ -16,7 +16,7 @@ int main(void) {
         greeting();
         input(&a, &b, &c);
         if (check()) {
-                Square_solution(a, b, c);
+                Print_solutions(a, b, c);
                 printf("Press esc to stop or any button to continue\n");
                 ch = _getch();
          }
@@ -46,15 +46,15 @@ void input(float *a, float *b, float *c) {
         }
 }
 
-void Square_solution(float a, float b, float c) {
+void Print_solutions(float a, float b, float c) {
     float D = float(pow(b, 2)) - 4 * a * c;
 
-    if (fabs(a) < eps) {
-        if (fabs(b) < eps) printf("infinite number of solutions\n");
+    if (fabs(a - 0) < eps) {
+        if (fabs(b - 0) < eps) printf("infinite number of solutions\n");
         else printf("Sol1 = %.5f", -c / b);
     }
     else {
-        if (fabs(D) < eps)
+        if (fabs(D - 0) < eps)
             printf("Sol1 = %.5f\n", -b / (2 * a));
         else if (D - eps > 0) {
             printf("Sol1 = %.5f\n", ((-b  + sqrt(D)) / (2 * a)));
