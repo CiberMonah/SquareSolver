@@ -9,8 +9,9 @@ int main (void) {
     float a, b, c;
 
     printf("Enter in a row, separated by spaces, the coefficients of the quadratic equation of the form: ax^2 + bx + c = 0\n");
-    scanf("%f %f %f", &a, &b, &c);
-    SquareSol(a, b ,c);
+    scanf("%f%f%f", &a, &b, &c);
+    if (getchar()!= 10) printf("Please, follow instructions");
+    else SquareSol(a, b, c);
 
     return 0;
 }
