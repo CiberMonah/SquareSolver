@@ -3,10 +3,12 @@
 #include <TXLib.h>
 #define eps 0.00001
 
-void Print_solutions(float a, float b, float c);
+void calculate_solutions(float a, float b, float c);
+void print_solutions(float solution1);
+void print_solutions(float solution1, float solution2);
 void greeting(void);
-bool check(void);
-void input(float *a, float *b, float *c);
+bool check_input(void);
+void input_coeficients(float *a, float *b, float *c);
 
 int main(void) {
     float a, b, c;
@@ -14,9 +16,9 @@ int main(void) {
 
     do {
         greeting();
-        input(&a, &b, &c);
-        if (check()) {
-                Print_solutions(a, b, c);
+        input_coeficients(&a, &b, &c);//in order
+        if (check_input()) {
+                calculate_solutions(a, b, c);
                 printf("Press esc to stop or any button to continue\n");
                 ch = _getch();
          }
@@ -28,7 +30,7 @@ void greeting(void) {
     printf("Enter in a row, separated by spaces, the coefficients of the quadratic equation of the form: ax^2 + bx + c = 0\n");
 }
 
-bool check(void) {
+bool check_input(void) {
     if (getchar() != '\n') {
         printf("Please, follow instructions\n");
         return false;
@@ -38,7 +40,7 @@ bool check(void) {
     }
 }
 
-void input(float *a, float *b, float *c) {
+void input_coeficients(float *a, float *b, float *c) {
     while (scanf("%f%f%f", a, b, c) != 3) {
         while (getchar()!='\n')
             ;
@@ -46,20 +48,28 @@ void input(float *a, float *b, float *c) {
         }
 }
 
-void Print_solutions(float a, float b, float c) {
+void calculate_solutions(float a, float b, float c) {
     float D = float(pow(b, 2)) - 4 * a * c;
 
-    if (fabs(a - 0) < eps) {
-        if (fabs(b - 0) < eps) printf("infinite number of solutions\n");
-        else printf("Sol1 = %.5f", -c / b);
+    if (fabs(a) < eps) {
+        if (fabs(b) < eps) printf("infinite number of solutions\n");
+        else print_solutions(-c / b);
     }
     else {
-        if (fabs(D - 0) < eps)
-            printf("Sol1 = %.5f\n", -b / (2 * a));
+        if (fabs(D) < eps)
+            print_solutions(-b / (2 * a));
         else if (D - eps > 0) {
-            printf("Sol1 = %.5f\n", ((-b  + sqrt(D)) / (2 * a)));
-            printf("Sol2 = %.5f\n", ((-b  - sqrt(D)) / (2 * a)));
+            print_solutions((-b  + float(sqrt(D))) / (2 * a), (-b  - float(sqrt(D))) / (2 * a));
         }
         else printf("There is no solutions\n");
     }
+}
+
+void print_solutions(float solution1, float solution2) {
+    printf("Solution_1 = %.5f\n", solution1);
+    printf("Solution_2 = %.5f\n", solution2);
+}
+
+void print_solutions(float solution1) {
+    printf("Solution_1 = %.5f\n", solution1);
 }
