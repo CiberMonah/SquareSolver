@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <TXLib.h>
-#define eps 0.000001
 
 float *calculate_solutions(float a, float b, float c);
 void print_solutions(float solutions[]);
