@@ -8,12 +8,16 @@ void SquareSol(float a, float b, float c);
 int main (void) {
     float a, b, c;
 
-    printf("Enter in a row, separated by spaces, the coefficients of the quadratic equation of the form: ax^2 + bx + c = 0\n");
-    scanf("%f%f%f", &a, &b, &c);
-    if (getchar()!= 10) printf("Please, follow instructions");
-    else SquareSol(a, b, c);
+     do {
+        printf("Enter in a row, separated by spaces, the coefficients of the quadratic equation of the form: ax^2 + bx + c = 0\n");
+        scanf("%f%f%f", &a, &b, &c);
+        if (getchar()!= '\n') printf("Please, follow instructions\n");
+        else {
+            SquareSol(a, b, c);
+            printf("Type Enter to continue\n");
+        }
+    }while (getchar()=='\n');
 
-    return 0;
 }
 
 void SquareSol(float a, float b, float c) {
