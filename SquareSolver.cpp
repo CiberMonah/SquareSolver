@@ -52,19 +52,19 @@ void input_coeficients(float *a, float *b, float *c) {
 float *calculate_solutions(float a, float b, float c) {
     float D = float(pow(b, 2)) - 4 * a * c;
 
-    if (fabs(a) < eps) {
-        if (fabs(b) < eps) solutions[0] = 3;
+    if (fabs(a) < FLT_EPSILON) {
+        if (fabs(b) < FLT_EPSILON) solutions[0] = 3;
         else {
             solutions[0] = 1;
             solutions[1] = -c / b;
         }
     }
     else {
-        if (fabs(D) < eps){
+        if (fabs(D) < FLT_EPSILON){
             solutions[0] = 1;
             solutions[1] = -b / (2 * a);
             }
-        if  (D - eps > 0) {
+        if  (D - FLT_EPSILON > 0) {
             solutions[0] = 2;
             solutions[1] = (-b  + float(sqrt(D))) / (2 * a);
             solutions[2] = (-b  - float(sqrt(D))) / (2 * a);
