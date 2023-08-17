@@ -2,17 +2,17 @@
 #include <math.h>
 #include <TXLib.h>
 
-struct solutions {
+struct Solutions {
     int quantity;
     float solution_1, solution_2;
 };
 
-struct coeficients {
+struct Coeficients {
     float a, b, c;
 };
 
-struct solutions *calculate_solutions(struct coeficients coeficient);
-void print_solutions(struct solutions *solution);
+struct Solutions *calculate_solutions(struct Coeficients coeficients);
+void print_solutions(struct Solutions *solutions);
 void greeting(void);
 bool check_input(void);
 void input_coeficients(float *a, float *b, float *c);
@@ -21,14 +21,14 @@ const int esc_button = 27;
 const float EPSILON = float(0.00001);
 
 int main(void) {
-    struct coeficients coeficient;
+    struct Coeficients coeficients;
     int ch;
 
     do {
         greeting();
-        input_coeficients(&coeficient.a, &coeficient.b, &coeficient.c);//in order
+        input_coeficients(&coeficients.a, &coeficients.b, &coeficients.c);//in order
         if (check_input()) {
-            print_solutions(calculate_solutions(coeficient));
+            print_solutions(calculate_solutions(coeficients));
             printf("Press esc to stop or any button to continue\n");
             ch = _getch();
         } else
@@ -56,38 +56,38 @@ void input_coeficients(float *a, float *b, float *c) {
         }
 }
 
-struct solutions *calculate_solutions(struct coeficients coeficient) {
-    float D = float(pow(coeficient.b, 2)) - 4 * coeficient.a * coeficient.c;
-    static struct solutions solution;
+struct Solutions *calculate_solutions(struct Coeficients coeficients) {
+    float D = float(pow(coeficients.b, 2)) - 4 * coeficients.a * coeficients.c;
+    static struct Solutions solutions;
 
-    if (fabs(coeficient.a) < EPSILON) {
-        if (fabs(coeficient.b) < FLT_EPSILON)
-            solution.quantity = 3;
+    if (fabs(coeficients.a) < EPSILON) {
+        if (fabs(coeficients.b) < FLT_EPSILON)
+            solutions.quantity = 3;
         else {
-            solution.quantity = 1;
-            solution.solution_1 = -coeficient.c / coeficient.b;
+            solutions.quantity = 1;
+            solutions.solution_1 = -coeficients.c / coeficients.b;
         }
     } else {
         if (fabs(D) < EPSILON){
-            solution.quantity = 1;
-            solution.solution_1 = -coeficient.b / (2 * coeficient.a);
+            solutions.quantity = 1;
+            solutions.solution_1 = -coeficients.b / (2 * coeficients.a);
         } else if (D - EPSILON > 0) {
-            solution.quantity = 2;
-            solution.solution_1 = (-coeficient.b  + float(sqrt(D))) / (2 * coeficient.a);
-            solution.solution_2 = (-coeficient.b  - float(sqrt(D))) / (2 * coeficient.a);
+            solutions.quantity = 2;
+            solutions.solution_1 = (-coeficients.b  + float(sqrt(D))) / (2 * coeficients.a);
+            solutions.solution_2 = (-coeficients.b  - float(sqrt(D))) / (2 * coeficients.a);
         } else
-            solution.quantity = 0;
+            solutions.quantity = 0;
     }
-    return &solution;
+    return &solutions;
 }
 
-void print_solutions(struct solutions *solution) {
-    if(fabs(solution->quantity - 3) <= EPSILON)
+void print_solutions(struct Solutions *solutions) {
+    if(fabs(solutions->quantity - 3) <= EPSILON)
         printf("infinity quantity of solutions\n");
-    else if(fabs(solution->quantity) <= EPSILON)
+    else if(fabs(solutions->quantity) <= EPSILON)
         printf("No solutions\n");
-    else if(fabs(solution->quantity - 2) <= EPSILON)
-        printf("Solution_1 = %f\nSolution_2 = %f\n", solution->solution_1, solution->solution_2);
+    else if(fabs(solutions->quantity - 2) <= EPSILON)
+        printf("Solution_1 = %f\nSolution_2 = %f\n", solutions->solution_1, solutions->solution_2);
     else
-        printf("Solution_1 = %f\n", solution->solution_1);
+        printf("Solution_1 = %f\n", solutions->solution_1);
 }
