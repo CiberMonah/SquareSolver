@@ -20,7 +20,7 @@ bool check_input(void);
 bool check_float_equality(float f_1, float f_2);
 void input_coefficients(struct Coefficients *coefficients);
 
-const int esc_button = 27;
+const int esc_button_code = 27;
 short unsigned int set_color_green = 10;
 const float epsilon = float(0.00001);
 
@@ -40,7 +40,7 @@ int main(void) {
         print_solutions(solutions);
         printf("Press esc to stop or any button to continue\n");
         ch = _getch();
-    } while (ch != esc_button);
+    } while (ch != esc_button_code);
 }
 
 void greeting(void) {
