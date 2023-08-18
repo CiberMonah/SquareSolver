@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <TXLib.h>
+#include <windows.h>
+#define INF 9999
 
 struct Solutions {
     int quantity;
@@ -19,12 +21,17 @@ bool check_float_equality(float f_1, float f_2);
 void input_coefficients(struct Coefficients *coefficients);
 
 const int esc_button = 27;
+short unsigned int set_color_green = 10;
 const float EPSILON = float(0.00001);
 
 int main(void) {
     struct Coefficients coefficients;
     struct Solutions solutions;
     int ch;
+
+    GetStdHandle(STD_OUTPUT_HANDLE);
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), set_color_green);
 
     do {
         greeting();
@@ -49,30 +56,30 @@ void input_coefficients(struct Coefficients *coefficients) {
 }
 
 void calculate_solutions(struct Coefficients coefficients, struct Solutions *solutions) {
-    float D = float(pow(coefficients.b, 2)) - 4 * coefficients.a * coefficients.c;
+    float discriminant = float(pow(coefficients.b, 2)) - 4 * coefficients.a * coefficients.c;
 
     if (fabs(coefficients.a) < EPSILON) {
         if (fabs(coefficients.b) < EPSILON)
-            solutions->quantity = 3;
+            solutions->quantity = INF;
         else {
             solutions->quantity = 1;
             solutions->solution_1 = -coefficients.c / coefficients.b;
         }
     } else {
-        if (check_float_equality(D, 0)){
+        if (check_float_equality(discriminant, 0)){
             solutions->quantity = 1;
             solutions->solution_1 = -coefficients.b / (2 * coefficients.a);
-        } else if (D > 0) {
+        } else if (discriminant > 0) {
             solutions->quantity = 2;
-            solutions->solution_1 = (-coefficients.b  + float(sqrt(D))) / (2 * coefficients.a);
-            solutions->solution_2 = (-coefficients.b  - float(sqrt(D))) / (2 * coefficients.a);
+            solutions->solution_1 = (-coefficients.b  + float(sqrt(discriminant))) / (2 * coefficients.a);
+            solutions->solution_2 = (-coefficients.b  - float(sqrt(discriminant))) / (2 * coefficients.a);
         } else
             solutions->quantity = 0;
     }
 }
 
 void print_solutions(struct Solutions solutions) {
-    if(solutions.quantity == 3)
+    if(solutions.quantity == INF)
         printf("infinity quantity of solutions\n");
     else if(solutions.quantity == 0)
         printf("No solutions\n");
@@ -84,6 +91,5 @@ void print_solutions(struct Solutions solutions) {
 
 bool check_float_equality(float f_1, float f_2)
 {
-    if(fabs(f_1 - f_2) <= EPSILON) return true;
-    else return false;
+    return ((f_1 - f_2) <= EPSILON);
 }
