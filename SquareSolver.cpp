@@ -22,7 +22,7 @@ void input_coefficients(struct Coefficients *coefficients);
 
 const int esc_button = 27;
 short unsigned int set_color_green = 10;
-const float EPSILON = float(0.00001);
+const float epsilon = float(0.00001);
 
 int main(void) {
     struct Coefficients coefficients;
@@ -58,8 +58,8 @@ void input_coefficients(struct Coefficients *coefficients) {
 void calculate_solutions(struct Coefficients coefficients, struct Solutions *solutions) {
     float discriminant = float(pow(coefficients.b, 2)) - 4 * coefficients.a * coefficients.c;
 
-    if (fabs(coefficients.a) < EPSILON) {
-        if (fabs(coefficients.b) < EPSILON)
+    if (fabs(coefficients.a) < epsilon) {
+        if (fabs(coefficients.b) < epsilon)
             solutions->quantity = INF;
         else {
             solutions->quantity = 1;
@@ -90,5 +90,5 @@ void print_solutions(struct Solutions solutions) {
 }
 
 bool check_float_equality(float f_1, float f_2) {
-    return ((f_1 - f_2) <= EPSILON);
+    return (fabs(f_1 - f_2) <= epsilon);
 }
