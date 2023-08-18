@@ -89,7 +89,6 @@ void print_solutions(struct Solutions solutions) {
         printf("Solution_1 = %f\n", solutions.solution_1);
 }
 
-bool check_float_equality(float f_1, float f_2)
-{
+bool check_float_equality(float f_1, float f_2) {
     return ((f_1 - f_2) <= EPSILON);
 }
