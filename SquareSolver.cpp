@@ -2,46 +2,7 @@
 #include <math.h>
 #include <TXLib.h>
 #include <windows.h>
-#define INF 9999
-
-struct Solutions {
-    int quantity;
-    float solution_1, solution_2;
-};
-
-struct Coefficients {
-    float a, b, c;
-};
-
-void calculate_solutions(struct Coefficients coefficients, struct Solutions *solutions);
-void print_solutions(struct Solutions solutions);
-void greeting(void);
-bool check_input(void);
-bool check_float_equality(float f_1, float f_2);
-void input_coefficients(struct Coefficients *coefficients);
-
-const int esc_button_code = 27;
-short unsigned int set_color_green = 10;
-const float epsilon = float(0.00001);
-
-int main(void) {
-    struct Coefficients coefficients;
-    struct Solutions solutions;
-    int ch;
-
-    GetStdHandle(STD_OUTPUT_HANDLE);
-
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), set_color_green);
-
-    do {
-        greeting();
-        input_coefficients(&coefficients);
-        calculate_solutions(coefficients, &solutions);
-        print_solutions(solutions);
-        printf("Press esc to stop or any button to continue\n");
-        ch = _getch();
-    } while (ch != esc_button_code);
-}
+#include "SquareSolver.h"
 
 void greeting(void) {
     printf("Enter in a row, separated by spaces, the coefficients of the quadratic equation of the form: ax^2 + bx + c = 0\n");
