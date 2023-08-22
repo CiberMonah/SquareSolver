@@ -133,5 +133,5 @@ float solve_line(float coef_1, float coef_2) {
 }
 
 void greeting(void) {
-    printf("# Author: Glisanov Andrej\n# Last update 22/08 22:32\n\n");
+    printf("# Author: Glisanov Andrej\n# Last update 22/08 23:05\n\n");
 }
