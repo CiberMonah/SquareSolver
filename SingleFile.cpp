@@ -33,9 +33,9 @@ float solve_line(float coef_1, float coef_2);
 const float EPSILON = 0.00001f;
 
 int main(void) {
-    struct Coefficients coefficients;
-    struct Solutions solutions;
-    int ch;
+    struct Coefficients coefficients {NAN, NAN, NAN};
+    struct Solutions solutions {,NAN,NAN};
+    int ch = 0;
     greeting();
 
     do {
