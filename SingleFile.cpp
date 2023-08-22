@@ -34,7 +34,7 @@ const float EPSILON = 0.00001f;
 
 int main(void) {
     struct Coefficients coefficients {NAN, NAN, NAN};
-    struct Solutions solutions {,NAN,NAN};
+    struct Solutions solutions {NO_ROOTS, NAN, NAN};
     int ch = 0;
     greeting();
 
@@ -64,8 +64,8 @@ bool input_coefficients(struct Coefficients *coefficients) {
                 return true;
             }
         } else {
-            skip_line();
-            printf("Wrong input\n");
+            //skip_line();
+            printf("# Wrong input\n");
             return false;
         }
     }
@@ -133,5 +133,5 @@ float solve_line(float coef_1, float coef_2) {
 }
 
 void greeting(void) {
-    printf("#Author: Glisanov Andrej\n# Last update 22/08 21:55\n\n");
+    printf("# Author: Glisanov Andrej\n# Last update 22/08 22:32\n\n");
 }
