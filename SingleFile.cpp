@@ -3,11 +3,11 @@
 #include <TXLib.h>
 
 enum Quantity_of_roots {
-    SINGLE_ROOT,
-    REPETED_ROOTS,
-    TWO_ROOTS,
-    NO_ROOTS,
-    INF_ROOTS
+    Single_Root,
+    Repeted_Roots,
+    Two_Roots,
+    No_Roots,
+    Inf_Roots
 };
 
 typedef enum Quantity_of_roots Quantity;
@@ -64,7 +64,6 @@ bool input_coefficients(struct Coefficients *coefficients) {
                 return true;
             }
         } else {
-            //skip_line();
             printf("# Wrong input\n");
             return false;
         }
@@ -79,16 +78,16 @@ void calculate_solutions(const struct Coefficients coefficients, struct Solution
         if (check_float_equality(coefficients.b, 0)) {
             solutions->quantity = INF_ROOTS;
         } else {
-            solutions->quantity = SINGLE_ROOT;
+            solutions->quantity = Single_Root;
             solutions->solution_1 = solve_line(coefficients.b, coefficients.c);
         }
     } else {
         if (check_float_equality(discriminant, 0)) {
-            solutions->quantity = REPETED_ROOTS;
+            solutions->quantity = Repeted_Roots;
             solutions->solution_1 = -coefficients.b / (2 * coefficients.a);
         } else if (discriminant > 0) {
             float sqrted = float(sqrt(discriminant));
-            solutions->quantity = TWO_ROOTS;
+            solutions->quantity = ;
             solutions->solution_1 = (-coefficients.b  + sqrted) / (2 * coefficients.a);
             solutions->solution_2 = (-coefficients.b  - sqrted) / (2 * coefficients.a);
         } else {
@@ -99,19 +98,19 @@ void calculate_solutions(const struct Coefficients coefficients, struct Solution
 
 void print_solutions(const struct Solutions solutions) {
     switch(solutions.quantity) {
-        case NO_ROOTS:
+        case No_Roots:
             printf("# No solutions\n");
             break;
-        case INF_ROOTS:
+        case Inf_Roots:
             printf("# Infinity quantity of solutions\n");
             break;
-        case SINGLE_ROOT:
+        case Single_Root:
             printf("# Solution = %.5f\n", solutions.solution_1);
             break;
-        case REPETED_ROOTS:
+        case Repeted_Roots:
             printf("# Repeted solution = %.5f\n", solutions.solution_1);
             break;
-        case TWO_ROOTS:
+        case Two_Roots:
             printf("# First solution = %.5f\n# Second solution = %.5f\n", solutions.solution_1, solutions.solution_2);
             break;
         default:
@@ -133,5 +132,5 @@ float solve_line(float coef_1, float coef_2) {
 }
 
 void greeting(void) {
-    printf("# Author: Glisanov Andrej\n# Last update 22/08 23:05\n\n");
+    printf("# Author: Glisanov Andrej\n# Last update 22/08 9:43\n\n");
 }
