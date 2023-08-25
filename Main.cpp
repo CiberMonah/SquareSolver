@@ -5,7 +5,6 @@
 #include "SolveEquation.h"
 #include "Test.h"
 
-
 int main(void) {
     Coefficients coefficients {NAN, NAN, NAN};
     Solutions solutions {NO_ROOTS, NAN, NAN};

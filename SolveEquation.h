@@ -25,6 +25,7 @@ void print_solutions(Solutions solutions);
 float solve_line(float coef_1, float coef_2);
 bool check_float_equality(const float, const float);
 const char *enum_to_string(Quantity quantity_of_roots);
+Quantity int_to_enum(int quantity_of_roots);
 
 
 #endif // SOLVEEQUATION_H_INCLUDED

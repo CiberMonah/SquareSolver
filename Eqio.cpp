@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 #include <TXLib.h>
-#include "Eqio.h"
 #include "SolveEquation.h"
+#include "Test.h"
+#include "Eqio.h"
+
+#define NAME_OF_FILE "my.txt"
 
 void print_solutions(const Solutions solutions) {
     switch (solutions.quantity_of_roots) {
@@ -57,5 +60,31 @@ void skip_line(void) {
 }
 
 void greeting(void) {
-    printf("# Author: Glisanov Andrej\n# Last update 22/08 17:13\n\n");
+    printf("# Author: Glisanov Andrej\n\n");
+}
+
+int read_test_from_file(Test_data *all_data[]) {
+    FILE *fp;
+    char name[] = NAME_OF_FILE;
+    int i = 0;
+    int number_of_roots = 0;
+
+    if ((fp = fopen(name, "r")) == NULL)
+    {
+      printf("Error: file didnt open\n");
+      return 1;
+    }
+
+    while (fscanf(fp, "%f %f %f %d %f %f %s", &all_data[i]->coefficients.a,
+        &all_data[i]->coefficients.b,
+        &all_data[i]->coefficients.c,
+        &number_of_roots,
+        &all_data[i]->solutions_ref.solution_1, &all_data[i]->solutions_ref.solution_2,
+        all_data[i]->name) == 7) {
+            all_data[i]->solutions_ref.quantity_of_roots = int_to_enum(number_of_roots);
+            i++;
+        }
+    fclose(fp);
+
+    return 0;
 }

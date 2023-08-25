@@ -23,6 +23,9 @@ void solve_quadratic(const Coefficients coefficients, Solutions *solutions) {
             solutions->quantity_of_roots = REPEATED_ROOT;
             solutions->solution_1 = -coefficients.b / (2 * coefficients.a);
         } else if (discriminant > 0) {
+
+            assert(discriminant > 0);
+
             float sqrted_disc = float(sqrt(discriminant));
 
             assert(!check_float_equality(coefficients.a, 0));
@@ -66,5 +69,24 @@ const char *enum_to_string(Quantity quantity_of_roots) {
     default:
         return "WRONG QUANTITY OF ROOTS";
         break;
+    }
+}
+
+Quantity int_to_enum(int quantity_of_roots) {
+    switch(quantity_of_roots) {
+        case 0:
+            return SINGLE_ROOT;
+            break;
+        case 1:
+            return REPEATED_ROOT;
+            break;
+        case 3:
+            return TWO_ROOTS;
+            break;
+        case 999:
+            return INF_ROOTS;
+            break;
+        default:
+            return NO_ROOTS;
     }
 }
