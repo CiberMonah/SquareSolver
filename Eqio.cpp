@@ -63,11 +63,19 @@ void greeting(void) {
     printf("# Author: Glisanov Andrej\n\n");
 }
 
-int read_test_from_file(Test_data *all_data[]) {
+float roots_to_float(float root) {
+    if(check_float_equality(root, VOID_ROOT_CODE))
+        return NAN;
+    else
+        return root;
+}
+
+unsigned int read_test_from_file(Test_data *all_data) {
     FILE *fp;
     char name[] = NAME_OF_FILE;
-    int i = 0;
     int number_of_roots = 0;
+    unsigned int i = 0;
+    float sol_1, sol_2;
 
     if ((fp = fopen(name, "r")) == NULL)
     {
@@ -75,16 +83,18 @@ int read_test_from_file(Test_data *all_data[]) {
       return 1;
     }
 
-    while (fscanf(fp, "%f %f %f %d %f %f %s", &all_data[i]->coefficients.a,
-        &all_data[i]->coefficients.b,
-        &all_data[i]->coefficients.c,
+    while(fscanf(fp, "%f %f %f %d %f %f",
+        &all_data[i].coefficients.a,
+        &all_data[i].coefficients.b,
+        &all_data[i].coefficients.c,
         &number_of_roots,
-        &all_data[i]->solutions_ref.solution_1, &all_data[i]->solutions_ref.solution_2,
-        all_data[i]->name) == 7) {
-            all_data[i]->solutions_ref.quantity_of_roots = int_to_enum(number_of_roots);
-            i++;
-        }
+        &sol_1, &sol_2) ==  6) {
+        all_data[i].solutions_ref.quantity_of_roots = int_to_enum(number_of_roots);
+        all_data[i].solutions_ref.solution_1 = roots_to_float(sol_1);
+        all_data[i].solutions_ref.solution_2 = roots_to_float(sol_2);
+        i++;
+    }
     fclose(fp);
 
-    return 0;
+    return i;
 }
