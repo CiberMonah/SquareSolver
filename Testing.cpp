@@ -1,8 +1,17 @@
 #include <stdio.h>
 #include <math.h>
 #include <TXLib.h>
-#include "SolveEquation.h"
 #include "Test.h"
+
+/// \brief Function check if roots solve_quadratic return are equal to reference roots
+/*!
+    <strong>Important!</strong> The order of calculated roots and reference roots is not important
+*/
+/*!
+    <b>BUT!</b> First two roots have to be <strong>calculated</strong>, and last one are <strong>references</strong>
+*/
+/// \param <input> float root_1, float root_2, float root_1_ref, float root_2_ref
+/// \param <output> bool
 
 bool check_roots(float root_1, float root_2, float root_1_ref, float root_2_ref) {
     if (check_float_equality(root_1, root_1_ref))
@@ -12,6 +21,16 @@ bool check_roots(float root_1, float root_2, float root_1_ref, float root_2_ref)
     else
         return false;
 }
+/// \brief Function to check one test
+/*!
+    It using function solve_quadratic to calculate solutions and write them in struct Test_data
+*/
+/*!
+    returns 1 if test passed, 0 if not
+*/
+
+/// \param <input> Test_data *data
+/// \param <output> int
 
 int test_one(Test_data *data) {
     assert(data != NULL);
@@ -19,8 +38,7 @@ int test_one(Test_data *data) {
 
     solve_quadratic(data->coefficients, &solutions);
     if (solutions.quantity_of_roots != data->solutions_ref.quantity_of_roots)
-        printf("FAILED TEST: %s\nNumber of Roots : %s expected Number of Roots : %s\n",
-            data->Name,
+        printf("FAILED TEST:\nNumber of Roots : %s expected Number of Roots : %s\n",
             enum_to_string(solutions.quantity_of_roots),
             enum_to_string(data->solutions_ref.quantity_of_roots)
             );
@@ -64,20 +82,23 @@ int test_one(Test_data *data) {
         }
     }
 }
+/// \brief Function to check all tests
+/*!
+    It read all tests from file by read_test_from_file(), then by  using function test_one check all tests
+*/
 
+/// \param <input> void
+/// \param <output> void
 void test_all() {
     int number_of_succeed = 0;
+    unsigned int number_of_tests = 0;
+    Test_data all_data[MAX_NUMBER_OF_TESTS];
 
-    Test_data all_data[] = {
-        {{1, 2,   1}, {REPEATED_ROOT,  -1,  NAN}, "Repeated root (full square)"},
-        {{1, 2, -15}, {TWO_ROOTS,      3,    -5}, "Two roots"                  },
-        {{2, 2,   2}, {NO_ROOTS,       NAN, NAN}, "No root"                    },
-        {{1, 0,   0}, {REPEATED_ROOT,  0,   NAN}, "Repeated root b = 0, c = 0" },
-        {{0, 0,   0}, {INF_ROOTS,      NAN, NAN}, "All coefs are zero"         }
-    };
+    number_of_tests = read_test_from_file(all_data); //downloading data from file
 
-    for (unsigned int i = 0; i < sizeof(all_data) / sizeof(Test_data); i++)
+    for(unsigned int i = 0; i < number_of_tests; i++) {
         number_of_succeed += test_one(&all_data[i]);
+    }
 
-    printf("Tests passed %d\n", number_of_succeed);
+    printf("Tests passed %d/%d\n", number_of_succeed, number_of_tests);
 }
