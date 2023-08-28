@@ -48,6 +48,7 @@ void solve_quadratic(const Coefficients coefficients, Solutions *solutions) {
 /// \brief Function to solve linear equation
 /*!
     It returns root of linear equation, used in solve_quadratic()
+    \warning First coef isnt Null
 */
 /// \param <input> float coef_1, float coef_2
 /// \param <output> float root

@@ -4,6 +4,7 @@
 #include "Eqio.h"
 #include "SolveEquation.h"
 #include "Test.h"
+
 /// \brief
 /*!
     Main have two modes mode to make user session and test mode to check if program work correctly

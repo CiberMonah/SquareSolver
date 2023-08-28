@@ -44,6 +44,7 @@ void print_instructions(void) {
 */
 /// \param <input> pointer on struct Coefficients{float a, float b, float c}
 /// \param <output> bool
+/// \return True if input correct, false otherwise.
 bool input_coefficients(struct Coefficients *coefficients) {
     while (true){
         if (scanf("%f%f%f", &coefficients->a, &coefficients->b, &coefficients->c) == 3) {

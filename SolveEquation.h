@@ -11,11 +11,13 @@ typedef enum Quantity_of_roots /*!Enumeration using to store codes of types quan
     NO_ROOTS = -1,///<No roots
     INF_ROOTS = 999///<Infinite roots
 } Quantity;
+
 /// \brief struct stores quantity of solutions and solutions of equation
 struct Solutions {
     Quantity quantity_of_roots;///<Quantity of roots of square equation
     float solution_1/*!First solution, if solution not exist it equals NAN*/, solution_2/*! Float second solution, if solution not exist it equals NAN*/;
 };
+
 /// \brief struct stores coefficients of equation
 struct Coefficients {
     float a/*!First coefficient of square equation*/,
@@ -29,6 +31,5 @@ float solve_line(float coef_1, float coef_2);
 bool check_float_equality(const float, const float);
 const char *enum_to_string(Quantity quantity_of_roots);
 Quantity int_to_enum(int quantity_of_roots);
-
 
 #endif // SOLVEEQUATION_H_INCLUDED
