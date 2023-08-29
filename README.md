@@ -5,9 +5,10 @@ Best way to solve square equation
 # Download 
 You have to dowload all source files from this repository to your computer
 # Compile
-To compile programm run compile.bat in cmd and .exe file will be created\n
+To compile programm run compile.bat in cmd and .exe file will be created\
 ![plot](https://github.com/CiberMonah/SquareSolver/blob/main_1/img/Compile.png)
 # Run program
 When program is compiled, run file.exe in cmd
+![plot](https://github.com/CiberMonah/SquareSolver/blob/main_1/img/Run.png)
 # Using program
 When program is ran, you will see menu, you can choose mode test/manual
