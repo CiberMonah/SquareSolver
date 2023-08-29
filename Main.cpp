@@ -4,23 +4,13 @@
 #include "Eqio.h"
 #include "SolveEquation.h"
 #include "Test.h"
-/*#include "Assert.h"//if debug
-#define NDEBUG*/
+#include "Assert.h"
 
 /// \brief
-/*!
-    Main have two modes mode to make user session and test mode to check if program work correctly
-*/
-/*!
-    In session mode you can type coefficients and split them by spaces or tabs, if there are any another symbols, programm outputs Wrong input
-*/
-/*!
-    To finish program in session mode type <b>e</b>, it permissible to type tabs ore spaces before/after 'e'
-*/
-
-/*!
-    if in menu you tipe another mode, program will print Error
-*/
+///Main have two modes mode to make user session and test mode to check if program work correctly
+///In session mode you can type coefficients and split them by spaces or tabs, if there are any another symbols, programm outputs Wrong input
+///To finish program in session mode type <b>e</b>, it permissible to type tabs ore spaces before/after 'e'
+///if in menu you tipe another mode, program will print Error
 int main(void) {
     Coefficients coefficients {NAN, NAN, NAN};
     Solutions solutions {NO_ROOTS, NAN, NAN};

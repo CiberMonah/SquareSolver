@@ -5,12 +5,9 @@
 #include "SolveEquation.h"
 
 /// \brief Use it to solve quadratic equation
-/*!
-    It calculates discriminant, and write in solutions quantity of roots, solutions: sol1, sol2
-*/
+///Calculates discriminant, and write in solutions quantity of roots, solutions: sol1, sol2
 /// \param <input> const Coefficients coefficients
-/// \param <output> Solutions *solutions
-
+/// \return Solutions *solutions
 void solve_quadratic(const Coefficients coefficients, Solutions *solutions) {
 
     assert(solutions != NULL);
@@ -33,7 +30,7 @@ void solve_quadratic(const Coefficients coefficients, Solutions *solutions) {
 
             assert(discriminant > 0);
 
-            float sqrted_disc = float(sqrt(discriminant));
+            float sqrted_disc = sqrtf(discriminant);
 
             assert(!check_float_equality(coefficients.a, 0));
 
@@ -45,32 +42,25 @@ void solve_quadratic(const Coefficients coefficients, Solutions *solutions) {
         }
     }
 }
+
 /// \brief Use it to solve linear equation
-/*!
-    It returns root of linear equation, used in solve_quadratic()
-    \warning First coef isnt Null
-*/
-/// \param <input> float coef_1, float coef_2
-/// \param <output> float root
+/// It returns root of linear equation, used in solve_quadratic()
+/// \warning First coef isnt Null
 float solve_line(float coef_1, float coef_2) {
     assert(!check_float_equality(coef_1, 0));
     return -coef_2 / coef_1;
 }
+
 /// \brief Use it to check if two float numbers are equal
-/*!
-    It used to avoid warning, when compare floats. Returns true if equal, false if not
-*/
-/// \param <input> const float f_1, const float f_2
-/// \param <output> bool
+/// Avoides warning, when compare floats. Returns true if equal, false if not
 bool check_float_equality(const float f_1, const float f_2) {
     return (float(fabs(f_1 - f_2)) <= EPSILON);
 }
+
 /// \brief Used to make better output
-/*!
-    It turns enum Quantity codes to string
-*/
+/// It turns enum Quantity codes to string
 /// \param <input> Quantity quantity_of_roots
-/// \param <output> const char *
+/// \return const char *
 const char *enum_to_string(Quantity quantity_of_roots) {
     switch (quantity_of_roots)
     {
@@ -94,9 +84,10 @@ const char *enum_to_string(Quantity quantity_of_roots) {
         break;
     }
 }
+
 /// \brief It used to turn input scanf("%d") from file to Quantity codes
 /// \param <input> int quantity_of_roots
-/// \param <output> Quantity int_to_enum
+/// \return Quantity int_to_enum
 Quantity int_to_enum(int quantity_of_roots) {
     switch(quantity_of_roots) {
         case 0:
