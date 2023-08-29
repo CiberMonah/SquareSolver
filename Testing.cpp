@@ -69,8 +69,7 @@ int test_one(Test_data *data) {
                 enum_to_string(data->solutions_ref.quantity_of_roots)
         );
     }
-    switch (data->solutions_ref.quantity_of_roots)
-    {
+    switch (data->solutions_ref.quantity_of_roots) {
     case NO_ROOTS:
         return 1;
     case INF_ROOTS:

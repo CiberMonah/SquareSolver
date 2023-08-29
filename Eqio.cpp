@@ -11,25 +11,25 @@
 /// \param <input> struct of solutions {int number_of_roots, float sol_1, float sol_2}
 void print_solutions(const Solutions solutions) {
     switch (solutions.quantity_of_roots) {
-        case NO_ROOTS:
-            printf("# No solutions\n");
-            break;
-        case INF_ROOTS:
-            printf("# Infinity quantity of solutions\n");
-            break;
-        case SINGLE_ROOT:
-            printf("# Solution = %.5f\n", solutions.solution_1);
-            break;
-        case REPEATED_ROOT:
-            printf("# Repeated solution = %.5f\n", solutions.solution_1);
-            break;
-        case TWO_ROOTS:
-            printf("# First solution = %.5f\n# Second solution = %.5f\n", solutions.solution_1, solutions.solution_2);
-            break;
-        default:
-            printf("# Error wrong quantity of solutions");
-            assert(0);
-            break;
+    case NO_ROOTS:
+        printf("# No solutions\n");
+        break;
+    case INF_ROOTS:
+        printf("# Infinity quantity of solutions\n");
+        break;
+    case SINGLE_ROOT:
+        printf("# Solution = %.5f\n", solutions.solution_1);
+        break;
+    case REPEATED_ROOT:
+        printf("# Repeated solution = %.5f\n", solutions.solution_1);
+        break;
+    case TWO_ROOTS:
+        printf("# First solution = %.5f\n# Second solution = %.5f\n", solutions.solution_1, solutions.solution_2);
+        break;
+    default:
+        printf("# Error wrong quantity of solutions");
+        assert(0);
+        break;
     }
 }
 

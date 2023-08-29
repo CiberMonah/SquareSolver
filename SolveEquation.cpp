@@ -62,8 +62,7 @@ bool check_float_equality(const float f_1, const float f_2) {
 /// \param <input> Quantity quantity_of_roots
 /// \return const char *
 const char *enum_to_string(Quantity quantity_of_roots) {
-    switch (quantity_of_roots)
-    {
+    switch (quantity_of_roots) {
     case SINGLE_ROOT:
         return "SINGLE ROOT";
         break;
@@ -89,20 +88,5 @@ const char *enum_to_string(Quantity quantity_of_roots) {
 /// \param <input> int quantity_of_roots
 /// \return Quantity int_to_enum
 Quantity int_to_enum(int quantity_of_roots) {
-    switch(quantity_of_roots) {
-        case 0:
-            return SINGLE_ROOT;
-            break;
-        case 1:
-            return REPEATED_ROOT;
-            break;
-        case 3:
-            return TWO_ROOTS;
-            break;
-        case 999:
-            return INF_ROOTS;
-            break;
-        default:
-            return NO_ROOTS;
-    }
+    return (Quantity)quantity_of_roots;
 }
