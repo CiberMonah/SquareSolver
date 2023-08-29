@@ -5,7 +5,7 @@ Best way to solve square equation
 # Download 
 You have to dowload all source files from this repository to your computer
 # Compile
-To compile programm run compile.bat in cmd and .exe file will be created
+To compile programm run compile.bat in cmd and .exe file will be created\n
 ![plot](https://github.com/CiberMonah/SquareSolver/blob/main_1/img/Compile.png)
 # Run program
 When program is compiled, run file.exe in cmd
