@@ -1,4 +1,4 @@
-<p class="aligncenter"> ![plot](https://cs6.pikabu.ru/avatars/885/v885226-734042827.jpg) </p>
+![plot](https://cs6.pikabu.ru/avatars/885/v885226-734042827.jpg)
 # Square Solver program
 Best way to solve square equation
 
@@ -6,7 +6,7 @@ Best way to solve square equation
 You have to dowload all source files from this repository to your computer
 # Compile
 To compile programm run compile.bat in cmd and .exe file will be created
-![plot](img\compile)
+![plot](img/compile)
 # Run program
 When program is compiled, run file.exe in cmd
 # Using program
