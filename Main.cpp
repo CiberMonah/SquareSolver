@@ -4,6 +4,8 @@
 #include "Eqio.h"
 #include "SolveEquation.h"
 #include "Test.h"
+/*#include "Assert.h"//if debug
+#define NDEBUG*/
 
 /// \brief
 /*!
