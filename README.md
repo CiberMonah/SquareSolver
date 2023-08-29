@@ -1,4 +1,4 @@
-![plot]([https://i.pinimg.com/originals/08/d3/9f/08d39fdada0a56921f4d827c4a141d13.jpg](https://cs6.pikabu.ru/avatars/885/v885226-734042827.jpg))
+![plot](https://cs6.pikabu.ru/avatars/885/v885226-734042827.jpg)
 # Square Solver program
 
 Best way to solve square equation
