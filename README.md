@@ -11,7 +11,7 @@ To compile program run compile.bat in cmd and .exe file will be created\
 When program is compiled, run file.exe in cmd\
 ![plot](https://github.com/CiberMonah/SquareSolver/blob/main_1/img/run.png)
 # Using program
-When program is ran, you will see menu, you can choose mode test/manual\
+When program is ran, you will see menu, you can choose mode session/test\
 ![plot](https://github.com/CiberMonah/SquareSolver/blob/main_1/img/Menu.png)
 ## Session mode
 ![plot](https://github.com/CiberMonah/SquareSolver/blob/main_1/img/Session.png)
