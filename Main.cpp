@@ -15,40 +15,9 @@
 /*!
     To finish program in session mode type <b>e</b>, it permissible to type tabs ore spaces before/after 'e'
 */
-/*!
-    \code
-    int main(void) {
-    Coefficients coefficients {NAN, NAN, NAN};
-    Solutions solutions {NO_ROOTS, NAN, NAN};
-    int ch = 0;
 
-    greeting();
-    printf("Choose mode\n1 - Start session\n2 - Testing mode\n");
-    ch = getchar();
-    switch (ch)
-    {
-    case '1':
-        do {
-            print_instructions();
-            if(input_coefficients(&coefficients)) {
-                solve_quadratic(coefficients, &solutions);
-                print_solutions(solutions);
-                printf("# type e to stop or anything to continue\n");
-                do {
-                    ch = getchar();
-                } while (ch == ' ' or ch == '\t');
-            }
-            skip_line();
-        } while (ch != 'e');
-        break;
-    case '2':
-        test_all();
-        break;
-    default:
-        printf("Error\n");
-    }
-}
-    \endcode
+/*!
+    if in menu you tipe another mode, program will print Error
 */
 int main(void) {
     Coefficients coefficients {NAN, NAN, NAN};

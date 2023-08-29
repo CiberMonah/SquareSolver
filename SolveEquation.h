@@ -15,14 +15,15 @@ typedef enum Quantity_of_roots /*!Enumeration using to store codes of types quan
 /// \brief struct stores quantity of solutions and solutions of equation
 struct Solutions {
     Quantity quantity_of_roots;///<Quantity of roots of square equation
-    float solution_1/*!First solution, if solution not exist it equals NAN*/, solution_2/*! Float second solution, if solution not exist it equals NAN*/;
+    float solution_1, //<First solution, if solution not exist it equals NAN
+        solution_2;//< Float second solution, if solution not exist it equals NAN
 };
 
 /// \brief struct stores coefficients of equation
 struct Coefficients {
-    float a/*!First coefficient of square equation*/,
-    b/*!Second coefficient of square equation*/,
-    c/*!Third coefficient of square equation*/;
+    float a,//<First coefficient of square equation
+    b,//<Second coefficient of square equation
+    c;//<Third coefficient of square equation
 };
 
 void solve_quadratic(const Coefficients coefficients, Solutions *solutions);

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['square_20solver_20program',['Square Solver program',['../md__c_1__xD0_x9F_xD1_x80_xD0_xBE_xD0_xB3_xD1_x80_xD0_xB0_xD0_xBC_xD0_xBC_xD1_x8B__save__r_e_a_d_m_e.html',1,'']]],
   ['single_5froot',['SINGLE_ROOT',['../_solve_equation_8h.html#ab67a4959c83759ce4996ef213367d488a804e1f8930ddba38a73d97cbd8c35ecf',1,'SolveEquation.h']]],
   ['skip_5fline',['skip_line',['../_eqio_8cpp.html#a92e74a80fd10344932c782297e450edf',1,'skip_line(void):&#160;Eqio.cpp'],['../_eqio_8h.html#a13171cc94df93641fa41710249bd2828',1,'skip_line():&#160;Eqio.cpp']]],
   ['solution_5f1',['solution_1',['../struct_solutions.html#a46d2576c8b7897a662b3bdc291b3fe55',1,'Solutions']]],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Square Solver: Test.h File Reference</title>
+<title>Square Solver: C:/Программы/Save/Test.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,6 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Square Solver
-   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -60,6 +59,10 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1d5c9519295384086bbd1275533d9774.html">Программы</a></li><li class="navelem"><a class="el" href="dir_f104d3245eda0275d0fa6feb10713f3a.html">Save</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -89,13 +92,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:add1fe75ad79de762a3906b6d41897ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check all tests.  <a href="#add1fe75ad79de762a3906b6d41897ff2">More...</a><br /></td></tr>
 <tr class="separator:add1fe75ad79de762a3906b6d41897ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5958f53c9ed960f1e05552b46265e7f9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_8h.html#a5958f53c9ed960f1e05552b46265e7f9">roots_to_float</a> (float root)</td></tr>
-<tr class="memdesc:a5958f53c9ed960f1e05552b46265e7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to avoid errors in reading from file.  <a href="#a5958f53c9ed960f1e05552b46265e7f9">More...</a><br /></td></tr>
+<tr class="memdesc:a5958f53c9ed960f1e05552b46265e7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use it to avoid errors in reading from file.  <a href="#a5958f53c9ed960f1e05552b46265e7f9">More...</a><br /></td></tr>
 <tr class="separator:a5958f53c9ed960f1e05552b46265e7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d034a2c22edba662f26a4029a638991"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_8h.html#a0d034a2c22edba662f26a4029a638991">check_roots</a> (float root_1, float root_2, float root_1_ref, float root_2_ref)</td></tr>
 <tr class="memdesc:a0d034a2c22edba662f26a4029a638991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function check if roots solve_quadratic return are equal to reference roots.  <a href="#a0d034a2c22edba662f26a4029a638991">More...</a><br /></td></tr>
 <tr class="separator:a0d034a2c22edba662f26a4029a638991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f2105a8e698eddd8ca2aedacb53864d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_8h.html#a8f2105a8e698eddd8ca2aedacb53864d">read_test_from_file</a> (<a class="el" href="struct_test__data.html">Test_data</a> *all_data)</td></tr>
-<tr class="memdesc:a8f2105a8e698eddd8ca2aedacb53864d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to read tests from defined file and put them to array by pointer.  <a href="#a8f2105a8e698eddd8ca2aedacb53864d">More...</a><br /></td></tr>
+<tr class="memdesc:a8f2105a8e698eddd8ca2aedacb53864d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use it to read tests from defined file and put them to array by pointer.  <a href="#a8f2105a8e698eddd8ca2aedacb53864d">More...</a><br /></td></tr>
 <tr class="separator:a8f2105a8e698eddd8ca2aedacb53864d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -176,8 +179,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function to read tests from defined file and put them to array by pointer. </p>
-<p>Returns number of all tests program had read </p><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_eqio_8cpp.html#a8f2105a8e698eddd8ca2aedacb53864d">read_test_from_file</a>(<a class="code" href="struct_test__data.html">Test_data</a> *all_data) {</div><div class="line">    FILE *fp;</div><div class="line">    <span class="keywordtype">char</span> name[] = <a class="code" href="_eqio_8cpp.html#af46fd75a856d4c6a91d84aa6f7e090e2">NAME_OF_FILE</a>;</div><div class="line">    <span class="keywordtype">int</span> number_of_roots = 0;</div><div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0;</div><div class="line">    <span class="keywordtype">float</span> sol_1, sol_2;</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span> ((fp = fopen(name, <span class="stringliteral">&quot;r&quot;</span>)) == NULL)</div><div class="line">    {</div><div class="line">      printf(<span class="stringliteral">&quot;Error: file didnt open\n&quot;</span>);</div><div class="line">      <span class="keywordflow">return</span> 1;</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordflow">while</span>(fscanf(fp, <span class="stringliteral">&quot;%f %f %f %d %f %f&quot;</span>,</div><div class="line">        &amp;all_data[i].coefficients.a,</div><div class="line">        &amp;all_data[i].coefficients.b,</div><div class="line">        &amp;all_data[i].coefficients.c,</div><div class="line">        &amp;number_of_roots,</div><div class="line">        &amp;sol_1, &amp;sol_2) ==  6) {</div><div class="line">        all_data[i].<a class="code" href="struct_test__data.html#a0abd9ba16fee1cf27aa65c97d654f6a9">solutions_ref</a>.<a class="code" href="struct_solutions.html#a86576424ffa9898a395a2e41217e0135">quantity_of_roots</a> = <a class="code" href="_solve_equation_8cpp.html#a9eb9db004c29cd87ffecb306349a2878">int_to_enum</a>(number_of_roots);</div><div class="line">        all_data[i].<a class="code" href="struct_test__data.html#a0abd9ba16fee1cf27aa65c97d654f6a9">solutions_ref</a>.<a class="code" href="struct_solutions.html#a46d2576c8b7897a662b3bdc291b3fe55">solution_1</a> = <a class="code" href="_eqio_8cpp.html#a5958f53c9ed960f1e05552b46265e7f9">roots_to_float</a>(sol_1);</div><div class="line">        all_data[i].<a class="code" href="struct_test__data.html#a0abd9ba16fee1cf27aa65c97d654f6a9">solutions_ref</a>.<a class="code" href="struct_solutions.html#a4665dbb6bae9825d269d2422ceca3a41">solution_2</a> = <a class="code" href="_eqio_8cpp.html#a5958f53c9ed960f1e05552b46265e7f9">roots_to_float</a>(sol_2);</div><div class="line">        i++;</div><div class="line">    }</div><div class="line">    fclose(fp);</div><div class="line"></div><div class="line">    <span class="keywordflow">return</span> i;</div><div class="line">}</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<p>Use it to read tests from defined file and put them to array by pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">&lt;input&gt;</td><td>pointer on array of structs </td></tr>
     <tr><td class="paramname">&lt;output&gt;</td><td>int - quantity of tests </td></tr>
@@ -203,7 +206,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function to avoid errors in reading from file. </p>
+<p>Use it to avoid errors in reading from file. </p>
 <p>When input root has VOID_ROOT_CODE it value turns to NAN</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">&lt;input&gt;</td><td>float </td></tr>
@@ -231,7 +234,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function to check all tests. </p>
-<p>It read all tests from file by <a class="el" href="_eqio_8cpp.html#a8f2105a8e698eddd8ca2aedacb53864d" title="Function to read tests from defined file and put them to array by pointer. ">read_test_from_file()</a>, then by using function test_one check all tests</p><dl class="params"><dt>Parameters</dt><dd>
+<p>It read all tests from file by <a class="el" href="_eqio_8cpp.html#a8f2105a8e698eddd8ca2aedacb53864d" title="Use it to read tests from defined file and put them to array by pointer. ">read_test_from_file()</a>, then by using function test_one check all tests</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">&lt;input&gt;</td><td>void </td></tr>
     <tr><td class="paramname">&lt;output&gt;</td><td>void </td></tr>

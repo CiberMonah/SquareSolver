@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['solveequation_2ecpp',['SolveEquation.cpp',['../_solve_equation_8cpp.html',1,'']]],
-  ['solveequation_2eh',['SolveEquation.h',['../_solve_equation_8h.html',1,'']]]
+  ['main_2ecpp',['Main.cpp',['../_main_8cpp.html',1,'']]],
+  ['mainpage_2edox',['mainpage.dox',['../mainpage_8dox.html',1,'']]]
 ];

@@ -4,7 +4,7 @@
 #include "Eqio.h"
 #include "SolveEquation.h"
 
-/// \brief Function to solve quadratic equation
+/// \brief Use it to solve quadratic equation
 /*!
     It calculates discriminant, and write in solutions quantity of roots, solutions: sol1, sol2
 */
@@ -45,7 +45,7 @@ void solve_quadratic(const Coefficients coefficients, Solutions *solutions) {
         }
     }
 }
-/// \brief Function to solve linear equation
+/// \brief Use it to solve linear equation
 /*!
     It returns root of linear equation, used in solve_quadratic()
     \warning First coef isnt Null
@@ -56,7 +56,7 @@ float solve_line(float coef_1, float coef_2) {
     assert(!check_float_equality(coef_1, 0));
     return -coef_2 / coef_1;
 }
-/// \brief Function check if two float numbers are equal
+/// \brief Use it to check if two float numbers are equal
 /*!
     It used to avoid warning, when compare floats. Returns true if equal, false if not
 */
@@ -65,36 +65,9 @@ float solve_line(float coef_1, float coef_2) {
 bool check_float_equality(const float f_1, const float f_2) {
     return (float(fabs(f_1 - f_2)) <= EPSILON);
 }
-/// \brief Function used to make better output
+/// \brief Used to make better output
 /*!
     It turns enum Quantity codes to string
-*/
-/*!
-    \code
-const char *enum_to_string(Quantity quantity_of_roots) {
-    switch (quantity_of_roots)
-    {
-    case SINGLE_ROOT:
-        return "SINGLE ROOT";
-        break;
-    case REPEATED_ROOT:
-        return "REPEATED_ROOT";
-        break;
-    case TWO_ROOTS:
-        return "TWO_ROOTS";
-        break;
-    case NO_ROOTS:
-        return "NO_ROOTS";
-        break;
-    case INF_ROOTS:
-        return "INF_ROOTS";
-        break;
-    default:
-        return "WRONG QUANTITY OF ROOTS";
-        break;
-    }
-}
-    \endcode
 */
 /// \param <input> Quantity quantity_of_roots
 /// \param <output> const char *
@@ -121,7 +94,7 @@ const char *enum_to_string(Quantity quantity_of_roots) {
         break;
     }
 }
-/// \brief Function used to turn input scanf("**%d**") from file to Quantity codes
+/// \brief It used to turn input scanf("%d") from file to Quantity codes
 /// \param <input> int quantity_of_roots
 /// \param <output> Quantity int_to_enum
 Quantity int_to_enum(int quantity_of_roots) {

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Square Solver: File Members</title>
+<title>Square Solver: C:/Программы/Save/Assert.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,7 +45,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,24 +59,46 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1d5c9519295384086bbd1275533d9774.html">Программы</a></li><li class="navelem"><a class="el" href="dir_f104d3245eda0275d0fa6feb10713f3a.html">Save</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Assert.h File Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>INF_ROOTS
-: <a class="el" href="_solve_equation_8h.html#ab67a4959c83759ce4996ef213367d488a5a79e9e49077da58fe5d46a98f0b5e36">SolveEquation.h</a>
-</li>
-<li>NO_ROOTS
-: <a class="el" href="_solve_equation_8h.html#ab67a4959c83759ce4996ef213367d488ab9a321da349ac1355b717745736ad90c">SolveEquation.h</a>
-</li>
-<li>REPEATED_ROOT
-: <a class="el" href="_solve_equation_8h.html#ab67a4959c83759ce4996ef213367d488aeeede764dfaeecefda2b5d48a08a79e9">SolveEquation.h</a>
-</li>
-<li>SINGLE_ROOT
-: <a class="el" href="_solve_equation_8h.html#ab67a4959c83759ce4996ef213367d488a804e1f8930ddba38a73d97cbd8c35ecf">SolveEquation.h</a>
-</li>
-<li>TWO_ROOTS
-: <a class="el" href="_solve_equation_8h.html#ab67a4959c83759ce4996ef213367d488a876622d3c0b008da13a3685c64714e81">SolveEquation.h</a>
-</li>
-</ul>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+</div>
+<p><a href="_assert_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a706ac5b1a53bd04067f81924b92cb9f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_assert_8h.html#a706ac5b1a53bd04067f81924b92cb9f6">Assert</a>(condition)</td></tr>
+<tr class="separator:a706ac5b1a53bd04067f81924b92cb9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a706ac5b1a53bd04067f81924b92cb9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a706ac5b1a53bd04067f81924b92cb9f6">&#9670;&nbsp;</a></span>Assert</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Assert</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">condition</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">({ \</div><div class="line">if (!condition) {            \</div><div class="line">    printf(<span class="stringliteral">&quot;Assertion failed: in file: %s, in function: %s, in line: %d&quot;</span>, __FILE__, __FUNCTION__, __LINE__);           \</div><div class="line">    abort();            \</div><div class="line">}         })</div></div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
